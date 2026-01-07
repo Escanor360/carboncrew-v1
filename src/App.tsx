@@ -1,26 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Navigation from './components/Navigation';
+import Hero from './components/Hero';
+import Services from './components/Services';
+import WhyCarbonCrew from './components/WhyCarbonCrew';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+import Antimatter from './components/Antimatter';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="min-h-screen font-sans antialiased overflow-x-hidden bg-dark-950">
+      {/* Antimatter Particle Effect - Fixed position, moves based on section */}
+      <Antimatter />
+      
+      <Navigation />
+      <main>
+        <section id="home">
+          <Hero />
+        </section>
+        <section id="services">
+          <Services />
+        </section>
+        <section id="why">
+          <WhyCarbonCrew />
+        </section>
+        <section id="projects">
+          <Projects />
+        </section>
+        <section id="contact">
+          <Contact />
+        </section>
+      </main>
+      <Footer />
     </div>
   );
-}
+};
 
 export default App;
